@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: Photo Service
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL57Dialect
+    show-sql: false
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/photo_service?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=America/Sao_Paulo&useSSL=false
+    username: ${MYSQL_USER:desenv}
+    password: ${MYSQL_PASSWORD:desenv@2021}
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: ${CONTEXT_PATH:/photo-service}
