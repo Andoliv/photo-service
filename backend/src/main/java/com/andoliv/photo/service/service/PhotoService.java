@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -24,7 +23,7 @@ public class PhotoService {
         return toExtPhoto(photo);
     }
 
-    public ExtPhoto[] getPhotos(){
+    public ExtPhoto[] getPhotos() {
         List<ExtPhoto> extPhotos = new ArrayList<>();
         List<Photo> photos = repository.findAll();
 

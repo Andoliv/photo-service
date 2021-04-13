@@ -11,7 +11,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {path: 'photo', component: PhotoComponent},
-  {path: 'photo-approval', component: PhotoApprovalComponent},
+  {path: 'photo-approval/:id', component: PhotoApprovalComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 

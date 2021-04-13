@@ -1,4 +1,7 @@
-<div>
-
+<div id="app">
+  <div [style.background-image]="'url(' + photoSrc  + ')'"> </div>
+  <input type="hidden" name="photo-id" value="{{id}}">
+  <img id="photo-approval" [src]="photoSrc" alt="..." />
+  <br />
   <button routerLink="/" >Home</button>
 </div>

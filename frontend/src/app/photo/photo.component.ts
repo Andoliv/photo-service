@@ -38,25 +38,30 @@ export class PhotoComponent implements OnInit {
 
   public capture() {
     this.photo.nativeElement.getContext("2d").drawImage(this.video.nativeElement, 0, 0, 640, 480);
-    // this.captures.push(this.canvas.nativeElement.toDataURL("image/png"));
-    // this.photo.nativeElement.getContext('2d').drawImage(this.video.nativeElement, 0, 0, 640, 480);
 
     this.photo.nativeElement.toBlob((blob) => {
       let formData = new FormData();
       formData.append('photo', blob);
 
       this.http.post(this.apiUrl, formData).subscribe({
-        next: data => {
-          this.router.navigate(['/photo-approval']);
+        next: (data: PhotoData) => {
+          console.log(data);
+          const photoId = data ? data.id : 0;
+          this.router.navigate(['/photo-approval', photoId]);
         },
         error: error => {
           console.error("There was an error!", error);
         }
       });
 
-
     });
 
   }
 
+}
+
+export interface PhotoData {
+  id: bigint;
+  photo: any;
+  data: any;
 }

@@ -9,10 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * The CORS Filter class is responsible to enable cross-domain communication with Photo Service backend
+ *
+ * @author anderson
+ */
 @Component
-public class SimpleCORSFilter implements Filter {
+public class CorsFilter implements Filter {
 
-    private final Logger LOG = LoggerFactory.getLogger(SimpleCORSFilter.class);
+    private final Logger LOG = LoggerFactory.getLogger(CorsFilter.class);
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
